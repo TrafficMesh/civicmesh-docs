@@ -43,6 +43,41 @@ theme:
   logo: assets/logo.png
   favicon: assets/favicon.png
 
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+      minify_css: true
+      minify_js: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - awesome-pages
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/TrafficMesh
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/civicmesh
+
+extra_css:
+  - stylesheets/extra.css
+
 nav:
   - Home: index.md
   - Quick Start: quickstart.md
@@ -56,89 +91,51 @@ nav:
       - Business Model: architecture/05_BUSINESS_MODEL.md
       - Go-to-Market: architecture/06_GO_TO_MARKET.md
       - Sensor Fusion: architecture/07_SENSOR_FUSION.md
-      - AI Model Governance: architecture/AI_MODEL_GOVERNANCE.md
-      - Blockchain & Transparency: architecture/BLOCKCHAIN_FINANCIAL_TRANSPARENCY.md
-  - API Reference:
-      - Overview: api/backend-api.md
-      - Detailed Specification: api/API_SPECIFICATION_DETAILED.md
-      - Hardware Telemetry: api/hardware-telemetry.md
-      - Data API: api/data-api.md
+      - System Design: architecture/SYSTEM_DESIGN.md
+  - Business:
+      - Business Model: architecture/05_BUSINESS_MODEL.md
+      - Go-to-Market Strategy: architecture/06_GO_TO_MARKET.md
+      - Commercial Programs: business/
   - Deployment:
-      - Quick Start: deployment/DOCKER_SETUP.md
+      - Docker Setup: deployment/DOCKER_SETUP.md
       - Single VM: deployment/SINGLE_VM_DEPLOYMENT.md
-      - Kubernetes MSSP: deployment/KUBERNETES_MSSP.md
-      - Operations Guide: deployment/OPERATIONS.md
-      - Production Deployment: deployment/PRODUCTION_DEPLOYMENT.md
+      - Kubernetes: deployment/KUBERNETES_MSSP.md
+      - Operations: deployment/OPERATIONS.md
+      - Operations Runbooks: operations/
   - Hardware:
+      - Hardware Stack: architecture/01_HARDWARE_STACK.md
       - Bill of Materials: hardware/NODE_BOM.md
-      - Assembly Guide: hardware/NODE_ASSEMBLY.md
+      - Assembly: hardware/NODE_ASSEMBLY.md
       - QA Testing: hardware/QA_TESTING.md
-      - Troubleshooting: hardware/TROUBLESHOOTING.md
-  - Compliance:
+      - BOM Details: hardware/bom/
+  - API Reference:
+      - Backend API: api/backend-api.md
+      - API Specification: api/API_SPECIFICATION.md
+      - Detailed Spec: api/API_SPECIFICATION_DETAILED.md
+      - Data API: api/data-api.md
+      - Hardware Telemetry: api/hardware-telemetry.md
+  - Compliance & Legal:
       - Ontario HTA: compliance/ONTARIO_HTA.md
       - Privacy & PIPEDA: compliance/PRIVACY_PIPEDA.md
       - Chain of Custody: compliance/CHAIN_OF_CUSTODY.md
-  - Roadmap:
-      - Phase 0 Status: roadmap/PHASE_0_STATUS.md
-      - Phase 1 Plan: roadmap/PHASE_1_PLAN.md
-      - Phase 2 Plan: roadmap/PHASE_2_PLAN.md
-      - Phase 3 Plan: roadmap/PHASE_3_PLAN.md
+      - Legal Documents: legal/
+  - Roadmap & Features:
+      - Phase Planning: roadmap/
+      - Features: features/
+      - Violation Detection: features/violation-detection/
+      - Data Pipeline: features/data-pipeline/
+      - Governance: features/governance/
+      - Market: features/market/
+  - Training:
+      - Training Materials: training/
+  - Ecosystem:
+      - Ecosystem Overview: ecosystem/
+  - Funding:
+      - Investor Materials: funding/
   - Community:
       - Contributing: community/CONTRIBUTING.md
       - Code of Conduct: community/CODE_OF_CONDUCT.md
       - Governance: community/GOVERNANCE.md
       - Transparency: community/TRANSPARENCY.md
-  - Documentation Index: DOCUMENTATION_INDEX.md
 
-plugins:
-  - search:
-      lang: en
-  - minify:
-      minify_html: true
-      minify_css: true
-      minify_js: true
-  - git-revision-date-localized:
-      enable_creation_date: true
-  - awesome-pages
-
-markdown_extensions:
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.emoji:
-      emoji_index: !!python/name:pymdownx.emoji.twemoji
-      emoji_generator: !!python/name:pymdownx.emoji.to_svg
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.arithmatex:
-      generic: true
-  - tables
-  - toc:
-      permalink: true
-      title: Table of Contents
-  - attr_list
-  - md_in_html
-
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/TrafficMesh
-      name: GitHub Organization
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/civicmesh
-      name: Twitter
-  version:
-    provider: mike
-
-copyright: |
-  &copy; 2026 CivicMesh. Dual licensed under AGPL-3.0 and Business Source License (BSL-1.1).
-  <br>Made with <i class="fas fa-heart" style="color: #db4437;"></i> by the CivicMesh community.
-
-watch:
-  - .
+copyright: "Copyright © 2026 CivicMesh. All rights reserved."
