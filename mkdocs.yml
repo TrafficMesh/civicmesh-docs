@@ -1,0 +1,18 @@
+site_name: CivicMesh Documentation
+nav:
+  - Home: README.md
+  - Architecture:
+      - Project Registry: architecture/00_PROJECT_REGISTRY.md
+      - Phase 0 MVP: architecture/01_PHASE_0_MVP.md
+      - System Design: architecture/SYSTEM_DESIGN.md
+  - API Reference: api/backend-api.md
+  - Deployment:
+      - Docker: deployment/DOCKER_SETUP.md
+      - Single VM: deployment/SINGLE_VM_DEPLOYMENT.md
+  - Roadmap:
+      - Phase 0: roadmap/PHASE_0_STATUS.md
+      - Phase 1: roadmap/PHASE_1_PLAN.md
+  - Community:
+      - Contributing: community/CONTRIBUTING.md
+      - Code of Conduct: community/CODE_OF_CONDUCT.md
+theme: readthedocs

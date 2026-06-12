@@ -1,42 +1,18 @@
-# Contributing to CivicMesh
+# Contributing Guide
 
-## GitHub Workflow
-1. Check open issues: https://github.com/orgs/TrafficMesh/issues
-2. Claim issue: "Assign to me"
-3. Create feature branch: `git checkout -b feature/description`
-4. Make commits with clear messages
-5. Push and open PR: `git push origin feature/description`
-6. Wait for code review and CI/CD
+GitHub workflow:
+1. Fork repository
+2. Create branch: git checkout -b feature/description
+3. Make commits
+4. Push: git push origin feature/description
+5. Open PR
 
-## Code Standards
+Code standards:
+- Python: Black, flake8, mypy
+- React: ESLint, Prettier
+- Hardware: Clear docs
 
-### Python (Backend/Firmware)
-- Formatter: Black
-- Linter: flake8
-- Type checker: mypy
-- Tests: pytest
-
-### React/TypeScript (Frontend)
-- Formatter: Prettier
-- Linter: ESLint
-- Tests: Jest
-
-### Hardware
-- Clear assembly procedures
-- Calibration reports
-- QA checklists
-
-## Testing
-All PRs must pass:
-- Unit tests (pytest / jest)
-- Linting (flake8 / eslint)
-- Type checking (mypy / tsc)
-- Security scanning (Trivy)
-
-Run locally before pushing:
-```bash
-pytest tests/unit/
-black --check backend/
-flake8 backend/
-mypy backend/
-```
+Testing:
+- Unit tests must pass
+- Linting required
+- Type checking required

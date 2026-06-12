@@ -1,23 +1,13 @@
-# Docker Setup for Local Development
+# Docker Setup
 
-## Start Services
-```bash
+Start services:
+\`\`\`bash
 cd civicmesh-backend
 docker compose -f config/docker/docker-compose.yml up
-```
+\`\`\`
 
-## Service Endpoints
-- **PostgreSQL**: localhost:5432
-- **MinIO Console**: localhost:9001
-- **Backend API**: localhost:8000
-- **RabbitMQ Console**: localhost:15672
-
-## Health Check
-```bash
-curl http://localhost:8000/health
-```
-
-## Stop Services
-```bash
-docker compose down
-```
+Endpoints:
+- PostgreSQL: localhost:5432
+- MinIO: localhost:9001
+- Backend: localhost:8000
+- RabbitMQ: localhost:15672
