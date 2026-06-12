@@ -5,6 +5,8 @@ site_url: https://civicmesh.org/docs
 repo_url: https://github.com/TrafficMesh/civicmesh-docs
 repo_name: civicmesh-docs
 edit_uri: edit/main/docs/
+docs_dir: docs
+site_dir: site
 
 theme:
   name: material
@@ -16,12 +18,17 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.top
+    - navigation.path
     - toc.integrate
+    - toc.follow
     - search.suggest
     - search.highlight
+    - search.share
     - content.tabs.link
     - content.code.copy
     - content.code.annotate
+    - content.action.edit
+    - content.action.view
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -42,6 +49,7 @@ theme:
     code: Roboto Mono
   logo: assets/logo.png
   favicon: assets/favicon.png
+  language: en
 
 markdown_extensions:
   - admonition
@@ -50,40 +58,69 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.details
+  - pymdownx.arithmatex:
+      block_start: $$
+      block_end: $$
+      inline_start: $
+      inline_end: $
   - toc:
       permalink: true
+      title: On this page
+      toc_depth: "2-4"
 
 plugins:
-  - search
+  - search:
+      lang: en
+      prebuild_index: true
   - minify:
       minify_html: true
       minify_css: true
       minify_js: true
   - git-revision-date-localized:
       enable_creation_date: true
-  - awesome-pages
+      type: timeago
+  - awesome-pages:
+      strict: false
 
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/TrafficMesh
+      name: GitHub
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/civicmesh
+      name: Twitter
+  version:
+    provider: mike
+    default: latest
 
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+copyright: "Copyright © 2026 CivicMesh. AGPL-3.0 & BSL-1.1 Licensed."
+
 nav:
   - Home: index.md
   - Quick Start: quickstart.md
-  - Architecture:
+  
+  - Architecture & Design:
       - Overview: architecture/ARCHITECTURE_COMPREHENSIVE.md
+      - System Design: architecture/SYSTEM_DESIGN.md
       - Project Registry: architecture/00_PROJECT_REGISTRY.md
+      - Project Registry Full: architecture/00_PROJECT_REGISTRY_FULL.md
       - Hardware Stack: architecture/01_HARDWARE_STACK.md
       - Violation Models: architecture/02_VIOLATION_MODELS.md
       - Digital Twin: architecture/03_DIGITAL_TWIN.md
@@ -91,51 +128,73 @@ nav:
       - Business Model: architecture/05_BUSINESS_MODEL.md
       - Go-to-Market: architecture/06_GO_TO_MARKET.md
       - Sensor Fusion: architecture/07_SENSOR_FUSION.md
-      - System Design: architecture/SYSTEM_DESIGN.md
-  - Business:
-      - Business Model: architecture/05_BUSINESS_MODEL.md
-      - Go-to-Market Strategy: architecture/06_GO_TO_MARKET.md
-      - Commercial Programs: business/
-  - Deployment:
-      - Docker Setup: deployment/DOCKER_SETUP.md
-      - Single VM: deployment/SINGLE_VM_DEPLOYMENT.md
-      - Kubernetes: deployment/KUBERNETES_MSSP.md
-      - Operations: deployment/OPERATIONS.md
-      - Operations Runbooks: operations/
-  - Hardware:
-      - Hardware Stack: architecture/01_HARDWARE_STACK.md
-      - Bill of Materials: hardware/NODE_BOM.md
-      - Assembly: hardware/NODE_ASSEMBLY.md
-      - QA Testing: hardware/QA_TESTING.md
-      - BOM Details: hardware/bom/
+      - AI Model Governance: architecture/AI_MODEL_GOVERNANCE.md
+      - Blockchain & Transparency: architecture/BLOCKCHAIN_FINANCIAL_TRANSPARENCY.md
+      - Phase 0 MVP: architecture/01_PHASE_0_MVP.md
+      - Phase 1 Expansion: architecture/02_PHASE_1_EXPANSION.md
+      - Phase 2 City Fleet: architecture/03_PHASE_2_CITY_FLEET.md
+      - Phase 3 Civilian: architecture/04_PHASE_3_CIVILIAN_OPTIN.md
+
   - API Reference:
       - Backend API: api/backend-api.md
       - API Specification: api/API_SPECIFICATION.md
-      - Detailed Spec: api/API_SPECIFICATION_DETAILED.md
+      - Detailed Specification: api/API_SPECIFICATION_DETAILED.md
       - Data API: api/data-api.md
       - Hardware Telemetry: api/hardware-telemetry.md
+
+  - Deployment & Operations:
+      - Quick Start: deployment/DOCKER_SETUP.md
+      - Docker Setup: deployment/DOCKER_SETUP.md
+      - Single VM Deployment: deployment/SINGLE_VM_DEPLOYMENT.md
+      - Kubernetes MSSP: deployment/KUBERNETES_MSSP.md
+      - Operations Guide: deployment/OPERATIONS.md
+      - Operational Runbooks: operations/
+
+  - Hardware:
+      - Hardware Stack: architecture/01_HARDWARE_STACK.md
+      - Bill of Materials: hardware/NODE_BOM.md
+      - Assembly Guide: hardware/NODE_ASSEMBLY.md
+      - QA Testing: hardware/QA_TESTING.md
+      - Troubleshooting: hardware/TROUBLESHOOTING.md
+      - BOM Details:
+          - Node BOM: hardware/bom/NODE_BOM.md
+          - Dashcam Specs: hardware/bom/DASHCAM_SPECS.md
+          - Power Management: hardware/bom/POWER_MANAGEMENT.md
+
   - Compliance & Legal:
-      - Ontario HTA: compliance/ONTARIO_HTA.md
-      - Privacy & PIPEDA: compliance/PRIVACY_PIPEDA.md
-      - Chain of Custody: compliance/CHAIN_OF_CUSTODY.md
+      - Regulatory:
+          - Ontario HTA: compliance/ONTARIO_HTA.md
+          - Privacy & PIPEDA: compliance/PRIVACY_PIPEDA.md
+          - Chain of Custody: compliance/CHAIN_OF_CUSTODY.md
       - Legal Documents: legal/
-  - Roadmap & Features:
-      - Phase Planning: roadmap/
-      - Features: features/
+
+  - Business & Revenue:
+      - Business Model: architecture/05_BUSINESS_MODEL.md
+      - Go-to-Market: architecture/06_GO_TO_MARKET.md
+      - Commercial Programs: business/
+      - Financial Models: business/
+      - Investor Materials: funding/
+
+  - Features & Roadmap:
+      - Feature Index: features/FEATURE_INDEX.md
+      - Test Guide: features/TEST_GUIDE.md
       - Violation Detection: features/violation-detection/
       - Data Pipeline: features/data-pipeline/
-      - Governance: features/governance/
-      - Market: features/market/
-  - Training:
-      - Training Materials: training/
-  - Ecosystem:
+      - Governance Features: features/governance/
+      - Market Expansion: features/market/
+      - Phase Planning: roadmap/
+
+  - Ecosystem & Strategy:
       - Ecosystem Overview: ecosystem/
-  - Funding:
-      - Investor Materials: funding/
+
+  - Training & Operations:
+      - Training Materials: training/
+      - Operations: operations/
+
   - Community:
       - Contributing: community/CONTRIBUTING.md
       - Code of Conduct: community/CODE_OF_CONDUCT.md
       - Governance: community/GOVERNANCE.md
       - Transparency: community/TRANSPARENCY.md
 
-copyright: "Copyright © 2026 CivicMesh. All rights reserved."
+  - Documentation Index: DOCUMENTATION_INDEX.md
