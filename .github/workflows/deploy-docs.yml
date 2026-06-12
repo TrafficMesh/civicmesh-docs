@@ -3,15 +3,8 @@ name: Deploy Documentation
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'docs/**'
-      - 'mkdocs.yml'
-      - '.github/workflows/deploy-docs.yml'
   pull_request:
     branches: [ main ]
-    paths:
-      - 'docs/**'
-      - 'mkdocs.yml'
 
 jobs:
   build:
@@ -38,7 +31,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
-          cname: civicmesh-docs.org
+          force_orphan: true
 
   validate:
     runs-on: ubuntu-latest
@@ -55,11 +48,7 @@ jobs:
         run: |
           pip install -r requirements.txt
       
-      - name: Build documentation
+      - name: Validate documentation
         run: |
           mkdocs build
-      
-      - name: Check for broken links
-        run: |
-          echo "Documentation build successful"
-          echo "Site ready at site/ directory"
+          echo "✓ Documentation build successful"
