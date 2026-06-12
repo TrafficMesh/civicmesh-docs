@@ -19,6 +19,7 @@ theme:
     - navigation.expand
     - navigation.top
     - navigation.path
+    - navigation.footer
     - toc.integrate
     - toc.follow
     - search.suggest
@@ -52,25 +53,62 @@ theme:
   language: en
 
 markdown_extensions:
-  - admonition
-  - attr_list
+  # Standard extensions
   - md_in_html
+  - extra
+  - tables
+  - fenced_code
+  - nl2br
+  
+  # Admonitions and details
+  - admonition
+  - pymdownx.details
+  
+  # Code blocks with syntax highlighting
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: python
+          class: python
+        - name: bash
+          class: bash
+        - name: sql
+          class: sql
+        - name: yaml
+          class: yaml
+  
+  # Tabs
+  - pymdownx.tabbed:
+      alternate_style: true
+  
+  # Checklists
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  
+  # Emoji
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.details
+  
+  # Smart symbols
+  - pymdownx.smartsymbols
+  - pymdownx.betterem
+  
+  # Formatting
+  - attr_list
+  - sane_lists
+  
+  # Table of contents
   - toc:
       permalink: true
       title: On this page
-      toc_depth: "2-4"
+      toc_depth: 2-4
 
 plugins:
-  - search
+  - search:
+      lang: en
   - minify:
       minify_html: true
       minify_css: true

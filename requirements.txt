@@ -1,7 +1,17 @@
+# Core MkDocs
 mkdocs==1.5.3
 mkdocs-material==9.5.3
+
+# Plugins
 mkdocs-minify-plugin==0.7.1
 mkdocs-git-revision-date-localized-plugin==1.2.2
-mkdocs-awesome-pages-plugin==2.9.2
-pymdown-extensions==10.5
+
+# Markdown extensions for full support
 markdown==3.5.1
+pymdown-extensions==10.5
+
+# Syntax highlighting
+pygments==2.17.2
+
+# HTML processing
+bleach==6.1.0
