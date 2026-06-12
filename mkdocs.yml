@@ -58,30 +58,19 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.details
-  - pymdownx.arithmatex:
-      block_start: $$
-      block_end: $$
-      inline_start: $
-      inline_end: $
   - toc:
       permalink: true
       title: On this page
       toc_depth: "2-4"
 
 plugins:
-  - search:
-      lang: en
-      prebuild_index: true
+  - search
   - minify:
       minify_html: true
       minify_css: true
@@ -89,8 +78,6 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: true
       type: timeago
-  - awesome-pages:
-      strict: false
 
 extra:
   social:
@@ -100,15 +87,9 @@ extra:
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/civicmesh
       name: Twitter
-  version:
-    provider: mike
-    default: latest
 
 extra_css:
   - stylesheets/extra.css
-
-extra_javascript:
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 copyright: "Copyright © 2026 CivicMesh. AGPL-3.0 & BSL-1.1 Licensed."
 
@@ -120,7 +101,6 @@ nav:
       - Overview: architecture/ARCHITECTURE_COMPREHENSIVE.md
       - System Design: architecture/SYSTEM_DESIGN.md
       - Project Registry: architecture/00_PROJECT_REGISTRY.md
-      - Project Registry Full: architecture/00_PROJECT_REGISTRY_FULL.md
       - Hardware Stack: architecture/01_HARDWARE_STACK.md
       - Violation Models: architecture/02_VIOLATION_MODELS.md
       - Digital Twin: architecture/03_DIGITAL_TWIN.md
@@ -130,10 +110,6 @@ nav:
       - Sensor Fusion: architecture/07_SENSOR_FUSION.md
       - AI Model Governance: architecture/AI_MODEL_GOVERNANCE.md
       - Blockchain & Transparency: architecture/BLOCKCHAIN_FINANCIAL_TRANSPARENCY.md
-      - Phase 0 MVP: architecture/01_PHASE_0_MVP.md
-      - Phase 1 Expansion: architecture/02_PHASE_1_EXPANSION.md
-      - Phase 2 City Fleet: architecture/03_PHASE_2_CITY_FLEET.md
-      - Phase 3 Civilian: architecture/04_PHASE_3_CIVILIAN_OPTIN.md
 
   - API Reference:
       - Backend API: api/backend-api.md
@@ -143,12 +119,10 @@ nav:
       - Hardware Telemetry: api/hardware-telemetry.md
 
   - Deployment & Operations:
-      - Quick Start: deployment/DOCKER_SETUP.md
       - Docker Setup: deployment/DOCKER_SETUP.md
       - Single VM Deployment: deployment/SINGLE_VM_DEPLOYMENT.md
       - Kubernetes MSSP: deployment/KUBERNETES_MSSP.md
       - Operations Guide: deployment/OPERATIONS.md
-      - Operational Runbooks: operations/
 
   - Hardware:
       - Hardware Stack: architecture/01_HARDWARE_STACK.md
@@ -156,40 +130,33 @@ nav:
       - Assembly Guide: hardware/NODE_ASSEMBLY.md
       - QA Testing: hardware/QA_TESTING.md
       - Troubleshooting: hardware/TROUBLESHOOTING.md
-      - BOM Details:
-          - Node BOM: hardware/bom/NODE_BOM.md
-          - Dashcam Specs: hardware/bom/DASHCAM_SPECS.md
-          - Power Management: hardware/bom/POWER_MANAGEMENT.md
 
   - Compliance & Legal:
-      - Regulatory:
-          - Ontario HTA: compliance/ONTARIO_HTA.md
-          - Privacy & PIPEDA: compliance/PRIVACY_PIPEDA.md
-          - Chain of Custody: compliance/CHAIN_OF_CUSTODY.md
+      - Ontario HTA: compliance/ONTARIO_HTA.md
+      - Privacy & PIPEDA: compliance/PRIVACY_PIPEDA.md
+      - Chain of Custody: compliance/CHAIN_OF_CUSTODY.md
       - Legal Documents: legal/
 
   - Business & Revenue:
       - Business Model: architecture/05_BUSINESS_MODEL.md
       - Go-to-Market: architecture/06_GO_TO_MARKET.md
       - Commercial Programs: business/
-      - Financial Models: business/
       - Investor Materials: funding/
 
   - Features & Roadmap:
       - Feature Index: features/FEATURE_INDEX.md
-      - Test Guide: features/TEST_GUIDE.md
       - Violation Detection: features/violation-detection/
       - Data Pipeline: features/data-pipeline/
-      - Governance Features: features/governance/
-      - Market Expansion: features/market/
-      - Phase Planning: roadmap/
+      - Governance: features/governance/
+      - Market: features/market/
+      - Roadmap: roadmap/
 
-  - Ecosystem & Strategy:
-      - Ecosystem Overview: ecosystem/
-
-  - Training & Operations:
-      - Training Materials: training/
+  - Operations & Training:
       - Operations: operations/
+      - Training: training/
+
+  - Ecosystem:
+      - Ecosystem Overview: ecosystem/
 
   - Community:
       - Contributing: community/CONTRIBUTING.md
