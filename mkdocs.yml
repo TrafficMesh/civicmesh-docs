@@ -1,18 +1,144 @@
 site_name: CivicMesh Documentation
+site_description: Distributed Traffic Enforcement & City Intelligence Platform
+site_author: CivicMesh Team
+site_url: https://civicmesh.org/docs
+repo_url: https://github.com/TrafficMesh/civicmesh-docs
+repo_name: civicmesh-docs
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+
 nav:
-  - Home: README.md
+  - Home: index.md
+  - Quick Start: quickstart.md
   - Architecture:
+      - Overview: architecture/ARCHITECTURE_COMPREHENSIVE.md
       - Project Registry: architecture/00_PROJECT_REGISTRY.md
-      - Phase 0 MVP: architecture/01_PHASE_0_MVP.md
-      - System Design: architecture/SYSTEM_DESIGN.md
-  - API Reference: api/backend-api.md
+      - Hardware Stack: architecture/01_HARDWARE_STACK.md
+      - Violation Models: architecture/02_VIOLATION_MODELS.md
+      - Digital Twin: architecture/03_DIGITAL_TWIN.md
+      - Data Flow: architecture/04_DATA_FLOW.md
+      - Business Model: architecture/05_BUSINESS_MODEL.md
+      - Go-to-Market: architecture/06_GO_TO_MARKET.md
+      - Sensor Fusion: architecture/07_SENSOR_FUSION.md
+      - AI Model Governance: architecture/AI_MODEL_GOVERNANCE.md
+      - Blockchain & Transparency: architecture/BLOCKCHAIN_FINANCIAL_TRANSPARENCY.md
+  - API Reference:
+      - Overview: api/backend-api.md
+      - Detailed Specification: api/API_SPECIFICATION_DETAILED.md
+      - Hardware Telemetry: api/hardware-telemetry.md
+      - Data API: api/data-api.md
   - Deployment:
-      - Docker: deployment/DOCKER_SETUP.md
+      - Quick Start: deployment/DOCKER_SETUP.md
       - Single VM: deployment/SINGLE_VM_DEPLOYMENT.md
+      - Kubernetes MSSP: deployment/KUBERNETES_MSSP.md
+      - Operations Guide: deployment/OPERATIONS.md
+      - Production Deployment: deployment/PRODUCTION_DEPLOYMENT.md
+  - Hardware:
+      - Bill of Materials: hardware/NODE_BOM.md
+      - Assembly Guide: hardware/NODE_ASSEMBLY.md
+      - QA Testing: hardware/QA_TESTING.md
+      - Troubleshooting: hardware/TROUBLESHOOTING.md
+  - Compliance:
+      - Ontario HTA: compliance/ONTARIO_HTA.md
+      - Privacy & PIPEDA: compliance/PRIVACY_PIPEDA.md
+      - Chain of Custody: compliance/CHAIN_OF_CUSTODY.md
   - Roadmap:
-      - Phase 0: roadmap/PHASE_0_STATUS.md
-      - Phase 1: roadmap/PHASE_1_PLAN.md
+      - Phase 0 Status: roadmap/PHASE_0_STATUS.md
+      - Phase 1 Plan: roadmap/PHASE_1_PLAN.md
+      - Phase 2 Plan: roadmap/PHASE_2_PLAN.md
+      - Phase 3 Plan: roadmap/PHASE_3_PLAN.md
   - Community:
       - Contributing: community/CONTRIBUTING.md
       - Code of Conduct: community/CODE_OF_CONDUCT.md
-theme: readthedocs
+      - Governance: community/GOVERNANCE.md
+      - Transparency: community/TRANSPARENCY.md
+  - Documentation Index: DOCUMENTATION_INDEX.md
+
+plugins:
+  - search:
+      lang: en
+  - minify:
+      minify_html: true
+      minify_css: true
+      minify_js: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - awesome-pages
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.arithmatex:
+      generic: true
+  - tables
+  - toc:
+      permalink: true
+      title: Table of Contents
+  - attr_list
+  - md_in_html
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/TrafficMesh
+      name: GitHub Organization
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/civicmesh
+      name: Twitter
+  version:
+    provider: mike
+
+copyright: |
+  &copy; 2026 CivicMesh. Dual licensed under AGPL-3.0 and Business Source License (BSL-1.1).
+  <br>Made with <i class="fas fa-heart" style="color: #db4437;"></i> by the CivicMesh community.
+
+watch:
+  - .
