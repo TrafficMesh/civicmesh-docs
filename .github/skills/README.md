@@ -13,3 +13,5 @@ The 26 inventory-approved upstream skills are under `.github/skills/<skill>/`, b
 - Review upstream changes through a PR; never float to the default branch.
 
 See `docs/governance/AGENT-SKILLS.md` for applicability, gates, and per-repository enablement.
+
+The three `trafficmesh-*` native skills are adapted from [PSDC Agent Skills](https://github.com/Post-Secondary-Digital-Commons/psdc-agent-skills) at revision `55808788e8a896b8dca2f492fddac9e3aa091c15` under Apache-2.0. See `LICENSE-PSDC-Native`; their wording has been adapted for TrafficMesh.

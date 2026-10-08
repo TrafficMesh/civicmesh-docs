@@ -44,7 +44,7 @@ A skill is a task-specific method, not permission. It cannot authorize creating 
 
 ## TrafficMesh-native skills
 
-These three skills are adapted from the PSDC-native skills and included in every repo. Their source text is rewritten for TrafficMesh, not copied as PSDC policy:
+These three skills are adapted from the PSDC-native skills at revision `55808788e8a896b8dca2f492fddac9e3aa091c15` under Apache-2.0 and included in every repo. Their source text is rewritten for TrafficMesh; the license is retained as `LICENSE-PSDC-Native`:
 
 | Skill | What it does | Adaptation |
 |---|---|---|

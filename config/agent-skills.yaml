@@ -129,19 +129,25 @@ notAdded:
   - git-guardrails-claude-code
   - migrate-to-shoehorn
   - scaffold-exercises
-  - setup-pre-commitnativeSkills:
+  - setup-pre-commit
+nativeSkillSource:
+  repository: https://github.com/Post-Secondary-Digital-Commons/psdc-agent-skills
+  revision: 55808788e8a896b8dca2f492fddac9e3aa091c15
+  license: Apache-2.0
+  adaptation: TrafficMesh-specific rewrite; source skill files are not copied verbatim
+nativeSkills:
   - id: trafficmesh-project-assessment
-    source: TrafficMesh
+    source: trafficmesh-native
     mode: adapted
     purpose: Assess revision-scoped claims and project readiness against TrafficMesh evidence boundaries.
     guardrails: [no-readiness-inflation, no-authority-transfer]
   - id: trafficmesh-evidence-audit
-    source: TrafficMesh
+    source: trafficmesh-native
     mode: adapted
     purpose: Trace each status claim to artifact, revision, check, scope, and limitation.
     guardrails: [evidence-state-required, no-runtime-claims-from-docs]
   - id: trafficmesh-upstream-adoption
-    source: TrafficMesh
+    source: trafficmesh-native
     mode: adapted
     purpose: Record reuse/adapt/fork/build decisions and check implementation deltas.
     guardrails: [upstream-provenance, license-review, operator-authority]
