@@ -4,7 +4,7 @@ context: common
 lifecycle: documentation-and-architecture
 skillPack:
   repository: TrafficMesh/civicmesh-docs
-  revision: pending-merge
+  revision: 64c96771dfb83406a1f288a2158052fa28054a5f
   registry: config/agent-skills.yaml
   policy: docs/governance/AGENT-SKILLS.md
 availableSkills:
