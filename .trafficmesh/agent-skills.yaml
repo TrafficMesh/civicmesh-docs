@@ -7,7 +7,40 @@ skillPack:
   revision: pending-merge
   registry: config/agent-skills.yaml
   policy: docs/governance/AGENT-SKILLS.md
+availableSkills:
+  - ask-matt
+  - code-review
+  - codebase-design
+  - diagnosing-bugs
+  - domain-modeling
+  - grill-me
+  - grill-with-docs
+  - grilling
+  - handoff
+  - implement
+  - implement-spec
+  - improve-codebase-architecture
+  - pr
+  - prototype
+  - research
+  - retro
+  - setup-matt-pocock-skills
+  - tdd
+  - teach
+  - to-questionnaire
+  - to-spec
+  - to-tickets
+  - triage
+  - wait-what
+  - wayfinder
+  - writing-for-agents
+  - trafficmesh-project-assessment
+  - trafficmesh-evidence-audit
+  - trafficmesh-upstream-adoption
 enabledSkills:
+  - trafficmesh-project-assessment
+  - trafficmesh-evidence-audit
+  - trafficmesh-upstream-adoption
   - code-review
   - domain-modeling
   - grill-me
@@ -32,7 +65,24 @@ gatedSkills:
   - implement-spec
   - setup-matt-pocock-skills
   - triage
+notEnabledSkills:
+  - codebase-design
+  - improve-codebase-architecture
+  - tdd
 prohibitedSkills:
+  - wizard
+excludedSkills:
+  - chief-of-staff
+  - claude-handoff
+  - loop-me
+  - setup-ts-deep-modules
+  - writing-beats
+  - writing-fragments
+  - writing-shape
+  - git-guardrails-claude-code
+  - migrate-to-shoehorn
+  - scaffold-exercises
+  - setup-pre-commit
   - wizard
 entrypoints:
   - README.md

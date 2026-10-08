@@ -42,6 +42,15 @@ A skill is a task-specific method, not permission. It cannot authorize creating 
 | `wizard` | Generates an interactive shell guide for human-only setup. | Excluded from default pack pending Windows, credentials, and city/institution security review. |
 | `writing-for-agents` | Makes agent instructions concise, routed, and verifiable. | Enabled for docs and repo guidance. |
 
+## TrafficMesh-native skills
+
+These three skills are adapted from the PSDC-native skills and included in every repo. Their source text is rewritten for TrafficMesh, not copied as PSDC policy:
+
+| Skill | What it does | Adaptation |
+|---|---|---|
+| `trafficmesh-project-assessment` | Produces revision-bound project/status assessment using a rubric. | Uses CivicMesh docs, contracts, code, and hardware/field evidence; does not accept decisions or inflate readiness. |
+| `trafficmesh-evidence-audit` | Checks status claims against artifact, revision, test/check, scope, and limitations. | Separates documentation, executable, hardware, field, deployment, and production evidence. |
+| `trafficmesh-upstream-adoption` | Evaluates upstream reuse/adapt/patch/fork/build options and records provenance. | Preserves TrafficMesh and city/operator authority, license review, and explicit maintenance ownership. |
 ### Inventory exclusions
 
 The 12 skills below are not in the default TrafficMesh pack: `chief-of-staff`, `claude-handoff`, `loop-me`, `setup-ts-deep-modules`, `writing-beats`, `writing-fragments`, `writing-shape`, `git-guardrails-claude-code`, `migrate-to-shoehorn`, `scaffold-exercises`, `setup-pre-commit`, and `wizard`.
