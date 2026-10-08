@@ -137,6 +137,7 @@ nav:
   
   - Architecture & Design:
       - Agent Skills Adoption: governance/AGENT-SKILLS.md
+      - Organization Copilot Instructions: governance/COPILOT-ORGANIZATION-INSTRUCTIONS.md
       - Overview: architecture/ARCHITECTURE_COMPREHENSIVE.md
       - System Design: architecture/SYSTEM_DESIGN.md
       - Project Registry: architecture/00_PROJECT_REGISTRY.md

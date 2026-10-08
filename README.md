@@ -35,3 +35,4 @@ Project Board: https://github.com/orgs/TrafficMesh/projects/2
 
 ## Agent Skills
 - [TrafficMesh skill adoption and governance](docs/governance/AGENT-SKILLS.md)
+- [Organization-wide Copilot instructions](docs/governance/COPILOT-ORGANIZATION-INSTRUCTIONS.md) (prepared text; not yet saved in GitHub settings)

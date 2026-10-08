@@ -1,5 +1,6 @@
 schemaVersion: 1
 repository: civicmesh-docs
+organization: TrafficMesh
 context: common
 lifecycle: documentation-and-architecture
 skillPack:
@@ -7,6 +8,7 @@ skillPack:
   revision: 6cea3bc1ab8014843b5f311d1c0b19fc1e25fc32
   registry: config/agent-skills.yaml
   policy: docs/governance/AGENT-SKILLS.md
+organizationInstructions: https://github.com/TrafficMesh/civicmesh-docs/blob/f03e3e295db90056baf5f0ddc6d1b586bdefb7a7/docs/governance/COPILOT-ORGANIZATION-INSTRUCTIONS.md
 availableSkills:
   - ask-matt
   - code-review
@@ -89,6 +91,7 @@ entrypoints:
   - architecture/00_PROJECT_REGISTRY.md
   - community/GOVERNANCE.md
   - docs/governance/AGENT-SKILLS.md
+  - docs/governance/COPILOT-ORGANIZATION-INSTRUCTIONS.md
   - config/agent-skills.yaml
 boundary:
   changeScope: this-repository
