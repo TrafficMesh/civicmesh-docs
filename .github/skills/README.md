@@ -1,13 +1,15 @@
-# Repository Agent Skills
+# TrafficMesh agent skills pack
 
-This repository contains selected skills from [Matt Pocock's skills repository](https://github.com/mattpocock/skills), pinned at upstream commit b0618bc436ad893b3c5e84e55fba86586d34a404. The source is MIT-licensed; see MIT-LICENSE-Matt-Pocock. The upstream skill files and referenced support resources are included in each skill directory.
+This repository vendors the TrafficMesh skill policy and the pinned upstream source pack. Upstream: [mattpocock/skills](https://github.com/mattpocock/skills), revision `f3fc5632f401156837ee3872f14fe33ccf1024ea`, MIT; see `MIT-LICENSE-Matt-Pocock`.
 
-GitHub Copilot can load a relevant skill from this directory when its description matches the task. These files are guidance, not proof that a build, test, hardware assembly, field trial, or deployment happened.
+The complete upstream entrypoints and resources are under `.github/skills/<skill>/_source_copy/`. These are source material only. The authoritative TrafficMesh disposition is `config/agent-skills.yaml`; this file records what is enabled, gated, prohibited, or excluded. Repo consumers opt in through `.trafficmesh/agent-skills.yaml` pinned to this repo's immutable commit.
 
-## Installed skills
+## Principles
 
-- **domain-modeling** — see domain-modeling/SKILL.md
-- **pr** — see pr/SKILL.md
-- **writing-for-agents** — see writing-for-agents/SKILL.md
+- Preserve upstream source bytes. Put TrafficMesh rules in the registry, wrapper guidance, and consumer manifests.
+- Keep documented, proposed, implemented, deployed, and production-proven states distinct.
+- A skill never grants authority to publish issues, merge, deploy, or change production state.
+- A structural validation pass proves manifest shape and paths only; it does not prove skill behavior or product runtime.
+- Review upstream changes through a PR; never float to the default branch.
 
-Use a skill only when its stated trigger fits the task. Repository documentation, existing interfaces, contributor guidance, security/privacy controls, and the user's explicit instructions take precedence where they conflict with generic skill guidance.
+See `docs/governance/AGENT-SKILLS.md` for applicability, gates, and per-repository enablement.

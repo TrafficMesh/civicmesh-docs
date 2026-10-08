@@ -1,0 +1,47 @@
+schemaVersion: 1
+repository: civicmesh-docs
+context: common
+lifecycle: documentation-and-architecture
+skillPack:
+  repository: TrafficMesh/civicmesh-docs
+  revision: pending-merge
+  registry: config/agent-skills.yaml
+  policy: docs/governance/AGENT-SKILLS.md
+enabledSkills:
+  - code-review
+  - domain-modeling
+  - grill-me
+  - grill-with-docs
+  - grilling
+  - handoff
+  - pr
+  - prototype
+  - research
+  - retro
+  - teach
+  - to-questionnaire
+  - to-spec
+  - to-tickets
+  - wayfinder
+  - wait-what
+  - writing-for-agents
+gatedSkills:
+  - ask-matt
+  - diagnosing-bugs
+  - implement
+  - implement-spec
+  - setup-matt-pocock-skills
+  - triage
+prohibitedSkills:
+  - wizard
+entrypoints:
+  - README.md
+  - architecture/00_PROJECT_REGISTRY.md
+  - community/GOVERNANCE.md
+  - docs/governance/AGENT-SKILLS.md
+  - config/agent-skills.yaml
+boundary:
+  changeScope: this-repository
+  decisionAuthority: TrafficMesh project owner and documented governance
+  contractAuthority: CivicMesh docs hub API and project specifications
+  trackerAuthority: GitHub issue/PR writes require explicit request

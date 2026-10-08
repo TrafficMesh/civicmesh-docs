@@ -136,6 +136,7 @@ nav:
   - Quick Start: quickstart.md
   
   - Architecture & Design:
+      - Agent Skills Adoption: governance/AGENT-SKILLS.md
       - Overview: architecture/ARCHITECTURE_COMPREHENSIVE.md
       - System Design: architecture/SYSTEM_DESIGN.md
       - Project Registry: architecture/00_PROJECT_REGISTRY.md
