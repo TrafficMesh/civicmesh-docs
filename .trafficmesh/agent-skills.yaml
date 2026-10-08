@@ -5,10 +5,10 @@ context: common
 lifecycle: documentation-and-architecture
 skillPack:
   repository: TrafficMesh/civicmesh-docs
-  revision: 6cea3bc1ab8014843b5f311d1c0b19fc1e25fc32
+  revision: 91754959b5627aebdfb147f080eb5582ac69165a
   registry: config/agent-skills.yaml
   policy: docs/governance/AGENT-SKILLS.md
-organizationInstructions: https://github.com/TrafficMesh/civicmesh-docs/blob/f03e3e295db90056baf5f0ddc6d1b586bdefb7a7/docs/governance/COPILOT-ORGANIZATION-INSTRUCTIONS.md
+organizationInstructions: https://github.com/TrafficMesh/civicmesh-docs/blob/91754959b5627aebdfb147f080eb5582ac69165a/docs/governance/COPILOT-ORGANIZATION-INSTRUCTIONS.md
 availableSkills:
   - ask-matt
   - code-review
