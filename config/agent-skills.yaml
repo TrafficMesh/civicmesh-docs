@@ -1,0 +1,153 @@
+schemaVersion: 1
+packId: trafficmesh-agent-skills
+status: proposed
+upstreams:
+  mattpocock-skills:
+    repository: https://github.com/mattpocock/skills
+    revision: f3fc5632f401156837ee3872f14fe33ccf1024ea
+    license: MIT
+    sourceRoot: .github/skills
+    updatePolicy: reviewed-pull-request
+skills:
+  - id: ask-matt
+    mode: adapted-gated
+    purpose: Route tasks only through TrafficMesh-authorized workflows.
+    gate: Router wrapper must enforce all prohibited and gated entries.
+  - id: code-review
+    mode: adapted
+    purpose: Review bounded changes against repo standards and origin requirements.
+    guardrails: [findings-only, no-implicit-approval-or-merge]
+  - id: codebase-design
+    mode: adapted
+    purpose: Design focused interfaces and clear module boundaries.
+    guardrails: [preserve-civicmesh-terms, honor-cross-repo-api-contracts]
+  - id: diagnosing-bugs
+    mode: gated
+    purpose: Diagnose executable and reproducible failures.
+    gate: Enable only when target behavior can be reproduced in an executable environment.
+  - id: domain-modeling
+    mode: adapted
+    purpose: Maintain consistent domain terms and documented design decisions.
+    guardrails: [docs-hub-terms-authoritative, preserve-proposal-status]
+  - id: grill-me
+    mode: adapted
+    purpose: Interview owner to clarify a proposed idea.
+    guardrails: [no-document-or-tracker-writes-without-request]
+  - id: grill-with-docs
+    mode: adapted
+    purpose: Interview and draft domain-document updates.
+    guardrails: [proposals-remain-proposals-until-owner-acceptance]
+  - id: grilling
+    mode: adapted
+    purpose: Ask staged questions to resolve a decision.
+    guardrails: [no-implicit-acceptance]
+  - id: handoff
+    mode: adapted
+    purpose: Record exact inspected state and useful next actions.
+    guardrails: [context-transfer-does-not-transfer-authority]
+  - id: implement
+    mode: gated
+    purpose: Implement a specifically assigned work item.
+    gate: Requires explicit user request and repository contribution controls.
+  - id: implement-spec
+    mode: gated
+    purpose: Coordinate implementation from an accepted spec.
+    gate: Requires explicit implementation request and accepted spec.
+  - id: improve-codebase-architecture
+    mode: adapted
+    purpose: Identify evidenced boundary improvement opportunities.
+    guardrails: [recommendations-only, no-unrequested-refactor]
+  - id: pr
+    mode: adapted
+    purpose: Draft reviewable PR descriptions.
+    guardrails: [accurate-evidence-and-checks, no-readiness-inflation]
+  - id: prototype
+    mode: adapted
+    purpose: Build disposable experiments to answer focused design questions.
+    guardrails: [synthetic-data-only, not-production-evidence]
+  - id: research
+    mode: adapted
+    purpose: Research primary sources and preserve provenance and uncertainty.
+    guardrails: [no-untrusted-instructions, note-license-and-version]
+  - id: retro
+    mode: adapted
+    purpose: Review an engineering session for bounded process improvements.
+    guardrails: [no-unrequested-policy-change]
+  - id: setup-matt-pocock-skills
+    mode: adapted-gated
+    purpose: Map tracker and domain-doc conventions for other skills.
+    gate: Inspect current labels and docs first; external settings writes need explicit request.
+  - id: tdd
+    mode: adapted
+    purpose: Guide red-green-refactor and test quality for code changes.
+    guardrails: [tests-do-not-prove-field-hardware-or-production-behavior]
+  - id: teach
+    mode: adapted
+    purpose: Teach project-relevant concepts with examples and exercises.
+    guardrails: [examples-do-not-constitute-approved-product-behavior]
+  - id: to-questionnaire
+    mode: adapted
+    purpose: Prepare questions for decision owners.
+    guardrails: [draft-only-sending-requires-explicit-request]
+  - id: to-spec
+    mode: adapted
+    purpose: Synthesize repository and conversation context into a testable spec.
+    guardrails: [separate-facts-proposals-assumptions-and-evidence, publish-only-on-request]
+  - id: to-tickets
+    mode: adapted
+    purpose: Decompose accepted plans into dependency-aware work items.
+    guardrails: [draft-first, issue-creation-requires-explicit-request]
+  - id: triage
+    mode: gated
+    purpose: Classify issues and PRs using a tracker workflow.
+    gate: Requires reviewed TrafficMesh label/state map and explicit tracker-write authorization.
+  - id: wait-what
+    mode: adapted
+    purpose: Re-explain confusing material using CivicMesh terminology.
+    guardrails: [technical-accuracy, use-docs-hub-vocabulary]
+  - id: wayfinder
+    mode: adapted
+    purpose: Map decision dependencies for large uncertain work.
+    guardrails: [owner-and-unresolved-decisions-visible, tracker-publishing-gated]
+  - id: writing-for-agents
+    mode: adapted
+    purpose: Write concise, routed, verifiable agent guidance.
+    guardrails: [repository-policy-over-generic-skill]
+prohibited:
+  - id: wizard
+    reason: Excluded pending Windows, credential, and city/institution security review.
+  - id: implement-spec-without-request
+    reason: Skills cannot authorize work without an explicit request.
+notAdded:
+  - chief-of-staff
+  - claude-handoff
+  - loop-me
+  - setup-ts-deep-modules
+  - writing-beats
+  - writing-fragments
+  - writing-shape
+  - git-guardrails-claude-code
+  - migrate-to-shoehorn
+  - scaffold-exercises
+  - setup-pre-commit
+nativeSkillSource:
+  repository: https://github.com/Post-Secondary-Digital-Commons/psdc-agent-skills
+  revision: 55808788e8a896b8dca2f492fddac9e3aa091c15
+  license: Apache-2.0
+  adaptation: TrafficMesh-specific rewrite; source skill files are not copied verbatim
+nativeSkills:
+  - id: trafficmesh-project-assessment
+    source: trafficmesh-native
+    mode: adapted
+    purpose: Assess revision-scoped claims and project readiness against TrafficMesh evidence boundaries.
+    guardrails: [no-readiness-inflation, no-authority-transfer]
+  - id: trafficmesh-evidence-audit
+    source: trafficmesh-native
+    mode: adapted
+    purpose: Trace each status claim to artifact, revision, check, scope, and limitation.
+    guardrails: [evidence-state-required, no-runtime-claims-from-docs]
+  - id: trafficmesh-upstream-adoption
+    source: trafficmesh-native
+    mode: adapted
+    purpose: Record reuse/adapt/fork/build decisions and check implementation deltas.
+    guardrails: [upstream-provenance, license-review, operator-authority]
