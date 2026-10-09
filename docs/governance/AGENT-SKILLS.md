@@ -78,6 +78,10 @@ The exact skill IDs and gates are machine-readable in `config/agent-skills.yaml`
 5. Validate source hashes and manifest references; this proves structure/provenance, not behavior.
 6. Review and merge the adoption PR before relying on the pack.
 
+## Application scope
+
+See AGENT-SKILL-APPLICATION-SCOPE.md for repo-area and lifecycle coverage across all five current repositories, skill-by-skill triggers, and gates.
+
 ## Organization-level Copilot instructions
 
 Repository skill packs and organization custom instructions have different scopes. These files travel with repositories; org-wide instructions are configured in TrafficMesh organization settings. A GitHub administrator should add a short rule set pointing agents to the consumer manifest and authority boundaries. Do not claim the setting is active until saved and verified in GitHub.

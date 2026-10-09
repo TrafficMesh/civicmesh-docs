@@ -4,7 +4,7 @@
 
 ## Project skill pack
 
-Use the task-relevant skill from the repository's `.trafficmesh/agent-skills.yaml` manifest. The organization pack contains 26 inventory-approved Matt Pocock skills and three TrafficMesh-adapted native skills, pinned through `TrafficMesh/civicmesh-docs`. Use a skill when its trigger matches the task and its manifest says it is enabled. Respect its gate when marked gated. The 12 inventory-excluded skills are not part of the TrafficMesh pack.
+Use the task-relevant skill from the repository's `.trafficmesh/agent-skills.yaml` manifest. See `AGENT-SKILL-APPLICATION-SCOPE.md` for repository-area and lifecycle mapping. The organization pack contains 26 inventory-approved Matt Pocock skills and three TrafficMesh-adapted native skills, pinned through `TrafficMesh/civicmesh-docs`. Use a skill when its trigger matches the task and its manifest says it is enabled. Respect its gate when marked gated. The 12 inventory-excluded skills are not part of the TrafficMesh pack.
 
 For a new or unconfigured TrafficMesh repository, use the docs hub's organization-wide registry and adoption guide. Do not silently install a different upstream version or treat a missing manifest as authorization to use gated workflows.
 

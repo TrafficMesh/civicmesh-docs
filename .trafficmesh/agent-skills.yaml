@@ -92,6 +92,7 @@ entrypoints:
   - community/GOVERNANCE.md
   - docs/governance/AGENT-SKILLS.md
   - docs/governance/COPILOT-ORGANIZATION-INSTRUCTIONS.md
+  - docs/governance/AGENT-SKILL-APPLICATION-SCOPE.md
   - config/agent-skills.yaml
 boundary:
   changeScope: this-repository
